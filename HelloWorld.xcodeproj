@@ -1,0 +1,44 @@
+//
+//  ViewController.swift
+//  Hello World
+//
+//  Created by Garcias on 28/12/16.
+//  Copyright © 2016 Garcias. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    @IBOutlet var helloLabel: UILabel!
+    
+    @IBOutlet var nameTextField: UITextField!
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func goButton(_ sender: UIButton) {
+        let theText = nameTextField.text!
+        
+        let alertMessage = UIAlertController (title: "Hi!", message: "Hi, \(theText) my name is Mario ✌️",preferredStyle: .alert)
+        
+        let okButton = UIAlertAction (title: "Ok", style: .default, handler: nil)
+        
+        alertMessage.addAction(okButton)
+        
+        present(alertMessage, animated: true, completion: nil)
+        
+        helloLabel.text = "Hi, \(theText)"
+        
+
+    }
+
+}
