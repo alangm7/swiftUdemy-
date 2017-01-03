@@ -1,0 +1,73 @@
+//
+//  ViewController.swift
+//  miles to meters
+//
+//  Created by Garcias on 01/01/17.
+//  Copyright © 2017 Garcias. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    
+    @IBOutlet var distanceTextField: UITextField!
+    
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    @IBOutlet var resultLabel: UILabel!
+    
+    let mileUnit = 1.609
+    
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        resultLabel.text = "El resultado es"
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+    @IBAction func convertButton(_ sender: UIButton) {
+        let selectedIndex = segmentedControl.selectedSegmentIndex
+        let textFieldVal = Double(distanceTextField.text!)!
+        
+        if selectedIndex == 0 {
+            let convertedValue = textFieldVal / mileUnit
+            reloadView(textFieldVal : textFieldVal, convertedValue : convertedValue)
+        }else {
+            let convertedValue = textFieldVal * mileUnit
+            reloadView(textFieldVal : textFieldVal, convertedValue : convertedValue)
+        }
+        
+    }
+    
+    func reloadView(textFieldVal: Double, convertedValue: Double){
+        let initValue = String(format: "%.2f", textFieldVal) // parceo %.2f hace que solo imprima dos valores
+        let endValue = String(format: "%.2f", convertedValue)
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            resultLabel.text = "\(initValue) km = \(endValue) millas"
+        }else{
+            resultLabel.text = "\(initValue) millas = \(endValue) km"
+
+        }
+        
+    }
+    
+    override var prefersStatusBarHidden: Bool { // funcion para esconder la barra de wifi, bateria y proveedor.
+        get {
+            return true
+        }
+    }
+    
+    
+}
+
