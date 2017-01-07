@@ -1,0 +1,80 @@
+let mark = "C"
+
+/*
+ 
+ Metodo largo
+ 
+if mark == "A" {
+    print ("Eres un crack")
+}
+if mark == "B" {
+    print ("Buena nota")
+}
+if mark == "C" {
+    print ("Aprobaste")
+}
+if mark == "D" {
+    print ("Te ha faltado poco")
+}
+if mark == "F" {
+    print ("Mas ganas para la proxima")
+}
+ */
+
+//Mejora del codigo de arriba
+
+switch mark {
+case "A":
+    print ("Eres un crack")
+    case "B":
+        print ("Buena nota")
+    case "C":
+        print ("Aprobaste")
+    case "D":
+        print ("Te ha faltado poco")
+    case "F":
+        print ("Mas ganas para la proxima")
+default:
+    print ("La nota no es valida")
+}
+
+
+//Switch con booleanos no lleva default
+
+let isWoman = true
+
+switch isWoman {
+case true:
+    print ("Es mujer")
+case false:
+    print("Es hombre")
+}
+
+
+//Multiples case en una sola linea
+
+let character = "p"
+
+switch character {
+case "a", "e", "i", "o", "u":
+    print ("Es una vocal")
+default:
+    print ("No es una vocal")
+}
+
+//Switch case (desde ... hasta) para mejorar tu coidgo
+
+let speed = 10
+
+switch speed {
+case 0 ... 60:
+    print ("Demasiado lento para ir por carretera")
+case 61 ... 100:
+    print ("Velocidad crucero")
+case 101 ... 120:
+    print ("Velocidad considerable, hay que estar alerta")
+case 121 ... 220:
+    print ("Te has pasado del limite de velocidad")
+default:
+    print ("Velocidad no valida")
+}
