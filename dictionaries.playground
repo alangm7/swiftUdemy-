@@ -1,0 +1,66 @@
+var shoppinglist : [String : String] = ["patatas": "comprar 5 kg de patatas",
+                                       "huevos":"comprar dos rejas de huevos",
+                                       "cebollas":"medio kilo de cebollas",
+                                       "pimientos":"un pimiento para darle sabor a la comida"]
+
+var luckyNumbers : [String: Int] = ["1": 7, "2": 18, "3": 23]
+
+luckyNumbers["1"]
+
+shoppinglist.count //contando cantidad de elementos en el diccionario
+
+shoppinglist["platanos"] = "necesito tambien dos platanos" //se pueden agregar elementos al diccionario
+
+print(shoppinglist)
+
+shoppinglist["manzanas"] = "necesitare tambien dos manzanas"
+
+print(shoppinglist)
+
+var myDict : [Int:Float] = [:] // creacion de un diccionario vacio
+
+myDict[3] = 2.7
+
+print(myDict)
+
+var wallStreet : [String:String] = ["AAPL":"Apple", "AMZN":"Amazon", "GOOG":"Google" ]
+
+wallStreet["FB"] = "Facebook"
+wallStreet["TW"] = "Twitter"
+
+print(wallStreet)
+
+var numbers : [Int:String] = [1:"uno", 2:"dos", 3:"tres", 4:"cuatro"]
+
+if numbers.isEmpty {
+    print("Este diccionario esta vacio")
+} else {
+    print("El diccionario tiene \(numbers.count) elementos")
+}
+
+if let myNumber = numbers[2] {
+    print(myNumber)
+} else {
+    print("El valor no existe")
+}
+
+
+var airports : [String: String] = [:]
+
+airports = ["VSA":"Villahermosa","CNC":"Cancun","MEX":"Ciudad de Mexico","GDL":"Gualajara"]
+
+if let oldAirport = airports.updateValue("Guadalajara", forKey: "GDL"){
+    print("El aeropuerto anterior para la clave GDL era \(oldAirport)")
+}
+print(airports)
+
+if let oldAirport = airports.removeValue(forKey: "GDL") {
+    print("Hemos eliminado el aeropuerto de \(oldAirport)")
+}
+
+print(airports)
+
+
+var testDict : [String : Int] = [:]
+
+testDict = ["Juan Gabriel Gomilla": 1888, "Alan Garcia Mendoza": 1990, "Alan Garcia Morales" : 2016]
