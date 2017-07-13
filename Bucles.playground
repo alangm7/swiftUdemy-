@@ -54,5 +54,5 @@ for (key, value) in extras {
 }
 
 for keys in extras.keys {
-    print("el valor que debemos imprimir es \(keys) y este cuesta \(extras[keys])")
+    print("el valor que debemos imprimir es \(keys) y este cuesta \(extras[keys]!)")
 }
