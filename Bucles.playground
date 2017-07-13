@@ -1,0 +1,58 @@
+for var i in 0...10 {
+    print("\(i) elevado a 2 = \(i*i)")
+}
+
+//Si no quieres imprimir el ultimo número
+
+for var i in 0..<10 {
+    print("Voy por la iteración \(i)")
+}
+
+//Contar en reversa
+for var i in (0...10).reversed() {
+    print("Aún me quedan \(i) cervezas")
+}
+
+var i = 0
+
+while i<10 {
+    print("Aún me quedan \(i) cervezas")
+    i = i+1
+}
+ 
+//formas de recorrer un array
+
+var names = ["sloth", "pride", "lust", "gluttony", "envy", "wrath"]
+
+for i in 0..<names.count {
+    print("tu pecado es el número \(i) y se llama \(names[i])")
+}
+
+for sin in names {
+    print("\(sin)")
+}
+
+for (index, sin) in names.enumerated() {
+    print("El pecado en el lugar \(index) se llama \(sin)")
+}
+
+var movies = ["Interestellar", "The shining", "Inception", "2001: A space odyssey", "Alien: Covenant"]
+
+for (index, names) in movies.enumerated() {
+    print("Película número \(index) es \(names)")
+}
+
+//Diccionarios
+
+var extras = [ "salchichas"     : 0.25,
+               "cebollas"       : 0.50,
+               "aguacate"       : 1.25,
+]
+
+for (key, value) in extras {
+    print("El valor de añadir \(key) es de \(value) $")
+}
+
+for keys in extras.keys {
+    print("el valor que debemos imprimir es \(keys) y este cuesta \(extras[keys])")
+}
