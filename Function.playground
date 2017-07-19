@@ -1,0 +1,40 @@
+import Foundation
+
+
+func sayHello (time : Int, to : String) -> Void{
+    
+    let date = Date()
+    print("Hola \(to) ahora son las \(date)")
+    print("Hemos impreso \(time) veces esto")
+}
+
+sayHello(time : 1, to : "Alan")
+
+sayHello(time : 2, to : "Ramón")
+
+sayHello(time : 3, to : "Alancito")
+
+
+func power2(exponent : Int ) -> Int {
+    return Int(pow(2.0, Double(exponent)))
+}
+
+let exponent = 12
+let power = power2(exponent: exponent)
+
+print("el valor de 2 elevado a \(exponent) es igual a \(power)")
+
+var extras = ["tacos"         : 10,
+              "tortas"        : 25,
+              "enchiladas"    : 8,
+              "gorditas"      : 12,
+              "empanadas"     : 8,
+]
+
+func addExtraIngredient(extras: [String: Int], ingredientName : String, quantity : Int) -> Double? {
+    guard let unitPrice = extras[ingredientName] else {
+        return nil}
+    return Double(quantity) * Double(unitPrice)
+}
+
+addExtraIngredient(extras: extras, ingredientName: "tacos", quantity: 4)
