@@ -1,0 +1,39 @@
+//Ejemplo de función con tuplas para retorno de productos
+
+
+func getProduct(idProduct: Int) -> (id: String, name: String, price: Double, isAvailable: Bool) {
+    
+    var id = "IPH0", name = "iPhone 8", price = 599.99, isAvailable = true
+    
+    switch idProduct {
+    case 1:
+        id = "IPH6"
+        name = "iPhone 6"
+        price = 459.99
+    case 2:
+        id = "IPDA"
+        name = "iPad Air"
+        price = 399.99
+        isAvailable = false
+    case 3:
+        id = "IMC"
+        name = "iMac 2014"
+        price = 800.99
+    default:
+        break
+    }
+    
+    return (id, name, price, isAvailable)
+    
+}
+
+
+var product = getProduct(idProduct: 0)
+
+print("El producto con el id \(product.id) se llama \(product.name) y su valor es de \(product.price) dolares ")
+
+if product.isAvailable {
+    print("Esta disponible en stock")
+} else {
+    print("No lo tenemos, pero podemos pedirte uno")
+}
